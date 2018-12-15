@@ -4,10 +4,12 @@
     "description": "",
     "main": "index.js",
     "dependencies": {
+        "@weco/next-plugin-transpile-modules": "0.0.2",
         "@zeit/next-css": "^1.0.1",
         "next": "^7.0.2",
-        "react": "^16.7.0-alpha",
-        "react-dom": "^16.7.0-alpha"
+        "react": "^16.7.0-alpha.2",
+        "react-dom": "^16.7.0-alpha.2",
+        "react-spring": "^7.1.0"
     },
     "devDependencies": {},
     "scripts": {

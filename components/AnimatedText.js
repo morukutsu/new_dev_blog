@@ -58,15 +58,9 @@ const useTextAnimation = (text, params) => {
     return currentText;
 };
 
-const AnimatedText = ({ props, children }) => {
-    const text = children;
-    const animatedText = useTextAnimation(text, {
-        type: 1,
-        speed: 10,
-        charset: "°=+/*-O8?",
-        count: 1
-    });
-
+const AnimatedText = props => {
+    const text = props.children;
+    const animatedText = useTextAnimation(text, props.parameters);
     return <div>{animatedText}</div>;
 };
 

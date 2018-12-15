@@ -1,4 +1,5 @@
-import AnimatedText from "../components/AnimatedText";
+import Head from "next/head";
+import Sidebar from "../components/Sidebar";
 import "./style.css";
 
 /*
@@ -9,23 +10,33 @@ import "./style.css";
 
 */
 
-export default () => (
-    <section style={styles.page}>
-        <aside style={styles.sidebar} />
+export default () => {
+    return (
+        <div>
+            <Head>
+                <title>morukutsu + blog</title>
+                <link
+                    rel="shortcut icon"
+                    href="/static/images/favicon.ico"
+                    type="image/x-icon"
+                />
+                <link
+                    rel="icon"
+                    href="/static/images/favicon.ico"
+                    type="image/x-icon"
+                />
+            </Head>
+            <section style={styles.page}>
+                <Sidebar />
 
-        <article />
-    </section>
-);
+                <article />
+            </section>
+        </div>
+    );
+};
 
 const styles = {
     page: {
         height: "100vh"
-    },
-
-    sidebar: {
-        display: "flex",
-        backgroundColor: "rgb(32, 32, 32)",
-        width: 320,
-        height: "100%"
     }
 };

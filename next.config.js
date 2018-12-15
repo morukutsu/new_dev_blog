@@ -12,6 +12,11 @@ module.exports = (phase, { defaultConfig }) => {
     }
 
     const withCSS = require("@zeit/next-css");
+    const withTM = require("@weco/next-plugin-transpile-modules");
 
-    return withCSS();
+    return withCSS(
+        withTM({
+            transpileModules: ["react-spring", "@babel/runtime/helpers"]
+        })
+    );
 };
