@@ -46,8 +46,11 @@ export default props => {
     let ArticleComponent = null;
     const articleMetadata = getArticleFromId(props.article);
     if (articleMetadata) {
-        ArticleComponent = dynamic(() =>
-            import(`../articles/${articleMetadata.path}`)
+        ArticleComponent = dynamic(
+            () => import(`../articles/${articleMetadata.path}`),
+            {
+                loading: () => <div />
+            }
         );
     }
 
