@@ -6,6 +6,5 @@
             "src": "/(?<article>[a-z0-9-]+)",
             "dest": "/index?article=$article"
         }
-    ],
-    "regions": "all"
+    ]
 }
