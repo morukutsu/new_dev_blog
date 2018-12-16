@@ -1,4 +1,11 @@
 {
     "version": 2,
-    "builds": [{ "src": "next.config.js", "use": "@now/next" }]
+    "builds": [{ "src": "next.config.js", "use": "@now/next" }],
+    "routes": [
+        {
+            "src": "/(?<article>[a-z0-9-]+)",
+            "dest": "/index?article=$article"
+        }
+    ],
+    "regions": "all"
 }
