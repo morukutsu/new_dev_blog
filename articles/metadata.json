@@ -1,0 +1,16 @@
+{
+    "articles": [
+        {
+            "name": "Old game projects",
+            "date": 1544915597333,
+            "keywords": "games, homebrew, old",
+            "path": "toast.mdx"
+        },
+        {
+            "name": "Old game projects 2?",
+            "date": 1544915597333,
+            "keywords": "games, homebrew, old",
+            "path": "toast2.mdx"
+        }
+    ]
+}

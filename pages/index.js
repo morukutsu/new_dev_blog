@@ -1,16 +1,14 @@
 import Head from "next/head";
+import Router, { withRouter } from "next/router";
+
 import Sidebar from "../components/Sidebar";
 import "./style.css";
 
-/*
+import Reader from "../components/Reader";
 
-<div style={{ fontFamily: "monospace", fontSize: 32, fontWeight: "bold" }}>
-    <AnimatedText>Welcome to my world</AnimatedText>
-</div>
+const Index = props => {
+    const articleId = props.router.query.article;
 
-*/
-
-export default () => {
     return (
         <div>
             <Head>
@@ -29,7 +27,9 @@ export default () => {
             <section style={styles.page}>
                 <Sidebar />
 
-                <article />
+                <article>
+                    <Reader article={articleId} />
+                </article>
             </section>
         </div>
     );
@@ -37,6 +37,9 @@ export default () => {
 
 const styles = {
     page: {
-        height: "100vh"
+        height: "100vh",
+        display: "flex"
     }
 };
+
+export default withRouter(Index);
