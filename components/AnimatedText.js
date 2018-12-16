@@ -1,33 +1,35 @@
 import React, { Component, useState, useRef, useEffect } from "react";
 
-const useFrameCounter = () => {
+const useFrameCounter = drawing => {
     const [frame, setFrame] = useState(0);
 
     // Start animation on mount
-    useEffect(() => {
-        let drawing = true;
+    useEffect(
+        () => {
+            const step = () => {
+                if (!drawing) return;
 
-        const step = () => {
-            if (!drawing) return;
+                setFrame(prevFrame => prevFrame + 1);
+                window.requestAnimationFrame(step);
+            };
 
-            setFrame(prevFrame => prevFrame + 1);
-            window.requestAnimationFrame(step);
-        };
+            step();
 
-        step();
-
-        return () => {
-            drawing = false;
-        };
-    }, []);
+            return () => {
+                drawing = false;
+            };
+        },
+        [drawing]
+    );
 
     return frame;
 };
 
 const useTextAnimation = (text, params) => {
-    const frame = useFrameCounter();
     const [animFrame, setAnimFrame] = useState(0);
     const [currentText, setCurrentText] = useState(text);
+    const [step, setStep] = useState(0);
+    const frame = useFrameCounter(step <= params.steps);
 
     useEffect(
         () => {
@@ -50,7 +52,13 @@ const useTextAnimation = (text, params) => {
                 }
             }
 
-            setCurrentText(chars.join(""));
+            if (step < params.steps) {
+                setCurrentText(chars.join(""));
+            } else {
+                setCurrentText(text);
+            }
+
+            setStep(prev => prev + 1);
         },
         [frame]
     );

@@ -5,6 +5,7 @@ import Sidebar from "../components/Sidebar";
 import "./style.css";
 
 import Reader from "../components/Reader";
+import List from "../components/List";
 
 const Index = props => {
     const articleId = props.router.query.article;
@@ -27,8 +28,10 @@ const Index = props => {
             <section style={styles.page}>
                 <Sidebar />
 
-                <article>
-                    <Reader article={articleId} />
+                <article style={styles.inner}>
+                    <div style={styles.content}>
+                        {articleId ? <Reader article={articleId} /> : <List />}
+                    </div>
                 </article>
             </section>
         </div>
@@ -39,6 +42,18 @@ const styles = {
     page: {
         height: "100vh",
         display: "flex"
+    },
+
+    inner: {
+        width: "100vh",
+        display: "flex",
+        paddingLeft: 10,
+        paddingTop: 100,
+        justifyContent: "center"
+    },
+
+    content: {
+        width: 700
     }
 };
 

@@ -22,8 +22,9 @@ export default () => {
     const animatedTextParameters = {
         type: 1,
         speed: 60,
-        charset: "°=+/*-!?%฿",
-        count: 2
+        charset: "°=+/*-!?%฿3:#",
+        count: 2,
+        steps: 10
     };
 
     return (
@@ -79,7 +80,8 @@ const styles = {
         flexDirection: "column",
         color: "#DEDEDE",
 
-        background: "linear-gradient(to bottom, rgb(32, 32, 32), #29323c)"
+        background: "linear-gradient(to bottom, rgb(32, 32, 32), #29323c)",
+        fontFamily: '"PT Sans", Helvetica, Arial, sans-serif'
     },
 
     profilePicture: {
@@ -111,7 +113,7 @@ const styles = {
         lineHeight: 1.3,
         fontWeight: 300,
         color: "#919191",
-        fontSize: 20
+        fontSize: 18
     },
 
     nav: {

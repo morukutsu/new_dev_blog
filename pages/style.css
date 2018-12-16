@@ -3,8 +3,13 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: "PT Sans", Helvetica, Arial, sans-serif;
+    /*font-family: "PT Sans", Helvetica, Arial, sans-serif;*/
+    font-family: "Merriweather", "Georgia", serif;
     text-rendering: optimizeLegibility;
+    background-color: #fafafa;
+    font-feature-settings: "kern", "liga", "clig", "calt";
+    font-kerning: normal;
+    color: #333333;
 }
 
 a {
@@ -22,6 +27,7 @@ h1 {
     font-weight: 900;
     font-size: 2.5rem;
     line-height: 1.1;
+    color: #3700b3;
 }
 
 #__next {

@@ -11,38 +11,25 @@ const generateArticleId = article => {
 };
 
 const getArticleFromId = id => {
-    // TODO: precompute this
+    // TODO: OPTI: precompute this
     const ids = db.articles.map(e => generateArticleId(e));
 
     const found = ids.indexOf(id);
-    if (found !== -1) {
-        return db.articles[found];
-    }
+    if (found !== -1) return db.articles[found];
 
     return null;
 };
 
+const Back = () => {
+    return (
+        <div style={styles.back}>
+            {"< "}
+            <a href="/">Back</a>
+        </div>
+    );
+};
+
 export default props => {
-    /*const [currentArticle, setCurrentArticle] = useState(null);
-
-    const list = db.articles.map(e => {
-        return (
-            <div key={e.name}>
-                <a onClick={() => setCurrentArticle(e)}>{e.name}</a>
-            </div>
-        );
-    });
-
-    let ArticleComponent = null;
-
-    if (currentArticle !== null) {
-        ArticleComponent = dynamic(() =>
-            import(`../articles/${currentArticle.path}`)
-        );
-    }
-
-    const a = getArticleFromId(props.article);*/
-
     let ArticleComponent = null;
     const articleMetadata = getArticleFromId(props.article);
     if (articleMetadata) {
@@ -54,5 +41,17 @@ export default props => {
         );
     }
 
-    return <div>{ArticleComponent != null ? <ArticleComponent /> : null}</div>;
+    return (
+        <div>
+            <Back />
+            {ArticleComponent != null ? <ArticleComponent /> : null}
+        </div>
+    );
+};
+
+const styles = {
+    back: {
+        fontWeight: 900,
+        fontSize: 18
+    }
 };
