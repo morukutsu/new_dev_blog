@@ -1,4 +1,5 @@
 import db from "../articles/metadata.json";
+import ArticleDate from "./ArticleDate";
 
 const generateArticleId = article => {
     let text = article.name.toLowerCase();
@@ -18,34 +19,12 @@ const getArticleFromId = id => {
 };
 
 const ArticleSummary = props => {
-    const date = new Date(props.article.date);
-    const months = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
-    ];
-
-    const month = months[date.getMonth()];
-    const day = date.getUTCDate() + 1;
-    const year = date.getUTCFullYear();
-
     return (
         <div style={styles.container}>
             <div style={styles.title}>
                 <a href={"/" + props.id}>{props.article.name}</a>
             </div>
-            <div style={styles.subtitle}>
-                {month} {day}, {year}
-            </div>
+            <ArticleDate date={props.article.date} />
             <div>{props.article.summary}</div>
         </div>
     );
@@ -68,11 +47,7 @@ const styles = {
     title: {
         fontWeight: 900,
         fontSize: 32,
-        color: "#3700b3"
-    },
-
-    subtitle: {
-        fontSize: 14,
-        marginBottom: 4
+        color: "#333333",
+        textDecoration: "none"
     }
 };

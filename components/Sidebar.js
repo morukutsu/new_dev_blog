@@ -1,21 +1,7 @@
-import {
-    useSpring,
-    useTransition,
-    useTrail,
-    useKeyframes,
-    animated
-} from "react-spring/hooks";
-
 import AnimatedText from "../components/AnimatedText";
 
 export default () => {
-    const props = useSpring({
-        opacity: 1,
-        transform: "translate(0px, 0px)",
-        from: { opacity: 0, transform: "translate(-120px, 0px)" }
-    });
     const headerStyle = {
-        ...props,
         ...styles.header
     };
 
@@ -29,7 +15,7 @@ export default () => {
 
     return (
         <aside style={styles.sidebar}>
-            <animated.div style={headerStyle}>
+            <div style={headerStyle}>
                 <img
                     style={styles.profilePicture}
                     src="/static/images/morukutsu_pic.png"
@@ -64,7 +50,7 @@ export default () => {
                         // GitHub
                     </a>
                 </nav>
-            </animated.div>
+            </div>
         </aside>
     );
 };
