@@ -55,7 +55,7 @@ h1 {
     margin-left: 380px;
 }
 
-@media screen and (max-width: 680px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     .sidebar {
         width: auto;
         height: 400px;
