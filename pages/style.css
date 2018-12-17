@@ -42,6 +42,34 @@ h1 {
     color: #333333;
 }
 
+.sidebar {
+    width: 320px;
+    height: 100%;
+    position: fixed;
+}
+
+.inner {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 100px;
+    margin-left: 380px;
+}
+
+@media screen and (max-width: 680px) {
+    .sidebar {
+        width: auto;
+        height: 400px;
+        position: relative;
+    }
+
+    .inner {
+        margin-left: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+    }
+}
+
 #__next {
     height: 100vh;
 }

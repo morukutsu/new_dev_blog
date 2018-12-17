@@ -28,7 +28,7 @@ const Index = props => {
             <section style={styles.page}>
                 <Sidebar />
 
-                <article style={styles.inner}>
+                <article style={styles.inner} className="inner">
                     <div style={styles.content}>
                         {articleId ? <Reader article={articleId} /> : <List />}
                     </div>
@@ -40,21 +40,15 @@ const Index = props => {
 
 const styles = {
     page: {
-        height: "100vh",
-        display: "flex"
+        height: "100vh"
     },
 
     inner: {
-        width: "100vh",
-        display: "flex",
-        paddingLeft: 10,
-        paddingTop: 100,
+        maxWidth: 700,
         justifyContent: "center"
     },
 
-    content: {
-        width: 700
-    }
+    content: {}
 };
 
 export default withRouter(Index);

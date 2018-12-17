@@ -14,7 +14,7 @@ export default () => {
     };
 
     return (
-        <aside style={styles.sidebar}>
+        <aside style={styles.sidebar} className="sidebar">
             <div style={headerStyle}>
                 <a style={styles.navLink} href="/">
                     <img
@@ -61,14 +61,11 @@ export default () => {
 const styles = {
     sidebar: {
         //backgroundColor: "rgb(32, 32, 32)",
-        width: 320,
-        height: "100%",
         display: "flex",
         //alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
         color: "#DEDEDE",
-
         background: "linear-gradient(to bottom, rgb(32, 32, 32), #29323c)",
         fontFamily: '"PT Sans", Helvetica, Arial, sans-serif'
     },
