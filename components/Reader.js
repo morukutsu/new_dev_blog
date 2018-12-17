@@ -33,9 +33,7 @@ const AnimationWrapper = props => {
 };
 
 const DynamicLoadedComp = props => {
-    const Empty = () => <div />;
-
-    const [component, setComponent] = useState(Empty);
+    const [component, setComponent] = useState(() => <div />);
 
     const loadModuleAsync = async () => {
         const module = await import(`../articles/${props.path}`);

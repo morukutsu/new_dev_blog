@@ -16,12 +16,15 @@ export default () => {
     return (
         <aside style={styles.sidebar}>
             <div style={headerStyle}>
-                <img
-                    style={styles.profilePicture}
-                    src="/static/images/morukutsu_pic.png"
-                    alt="profile avatar of morukutsu (pixel art)"
-                />
-                <div style={styles.title}>Uldéric Kibongui</div>
+                <a style={styles.navLink} href="/">
+                    <img
+                        style={styles.profilePicture}
+                        src="/static/images/morukutsu_pic.png"
+                        alt="profile avatar of morukutsu (pixel art)"
+                    />
+
+                    <div style={styles.title}>Uldéric Kibongui</div>
+                </a>
                 <div style={styles.subtitle}>
                     <a
                         href="https://twitter.com/morukutsu"

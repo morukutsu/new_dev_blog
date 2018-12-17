@@ -1,18 +1,12 @@
 {
     "articles": [
         {
-            "name": "Old game projects",
+            "name": "Welcome!",
             "summary":
-                "Nintendo DS and Wii homebrews, technical and gameplay demonstrations.",
+                "A introduction to this blog, and what is going on underneath.",
             "date": 1544915597333,
-            "keywords": "games, homebrew, old",
-            "path": "toast.mdx"
-        },
-        {
-            "name": "Old game projects 2?",
-            "date": 1544915598333,
-            "keywords": "games, homebrew, old",
-            "path": "toast2.mdx"
+            "keywords": "",
+            "path": "welcome.mdx"
         }
     ]
 }
