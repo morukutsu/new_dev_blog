@@ -78,7 +78,7 @@ const styles = {
     },
 
     title: {
-        fontSize: 32,
+        fontSize: "1.5rem",
         fontWeight: "bold",
         marginTop: 10
     },
@@ -94,7 +94,7 @@ const styles = {
 
     description: {
         marginTop: 10,
-        width: 260,
+        width: 200,
         alignSelf: "center",
         lineHeight: 1.3,
         fontWeight: 300,
